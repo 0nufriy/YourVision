@@ -1,0 +1,291 @@
+table{
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 98%;
+    font-size: 20px;
+    border-collapse: collapse;
+}
+
+th{
+    background-color: #EEEEEE;
+    padding-left: 2px;
+}
+td{
+    background-color: #FFF;
+    padding-left: 2px;
+}
+
+th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+tr :last-child{
+    background-color: #FFF;
+}
+table tr :last-child{
+    border: none;
+}
+button[class = "detail"]{
+    font-size: 20px;
+    color: white;
+    border-radius: 20px; 
+    width: 100%;
+    height: auto;
+    margin-left: 0.5%;
+    font-family: 'Chakra Petch';
+    background-color: #000000;
+}
+button[class = 'detail']:hover{
+    background-color: #5e5e5e;
+  }
+  button[class = "delete"]{
+    font-size: 20px;
+    color: white;
+    border-radius: 20px; 
+    width: 100%;
+    height: auto;
+    margin-left: 0.5%;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-family: 'Chakra Petch';
+    background-color: #a50000;
+}
+button[class = 'delete']:hover{
+    background-color: #6e0000;
+  }
+
+  button[class = "Applay"]{
+    background-color: #000000;
+    font-size: 20px;
+    color: white;
+    border-radius: 20px; 
+    font-family: 'Chakra Petch';
+    border: 0px solid #000;
+    width: 150px;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+}
+button[class = 'Applay']:hover{
+    background-color: #313131;
+  }
+
+  button[class = "Cancel"]{
+    background-color: #6D6D6D;
+    font-size: 20px;
+    color: white;
+    border-radius: 20px; 
+    font-family: 'Chakra Petch';
+    border: 0px solid #000;
+    width: 150px;
+    margin-right: 0.5%;
+    margin-left: 0.5%;
+}
+button[class = 'Cancel']:hover{
+    background-color: #d4d4d4;
+    color: #000;
+  }
+
+  .ReactModal__Overlay {
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+  }
+  
+  .ReactModal__Overlay--after-open {
+    opacity: 1;
+  }
+  
+  .ReactModal__Overlay--before-close {
+    opacity: 0;
+  }
+  .Modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ccc;
+    background: #fff;
+    overflow: auto;
+    border-radius: 4px;
+    outline: none;
+    padding: 20px;
+    z-index: "1000";
+}
+.UpFilterMenu{  
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.Fileter{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.FilterText{
+  margin-top: 1%;
+  margin-bottom: 1%;
+  text-align: center;
+  font-size: 25px;
+  font-family: 'Chakra Petch';
+}
+input[name = "FilterInput"]{
+  box-sizing: border-box;
+  border: 2px solid #000;
+  border-radius: 10px; 
+  background: #EEEEEE !important; 
+  outline: none;
+  height: 30px;
+  width: 100%; 
+  color: #000; 
+  font-size: 20px;  
+  padding-left: 20px;
+}
+button[name = "ApplayFilter"]{
+  background-color: #000000;
+  font-size: 20px;
+  color: white;
+  border-radius: 20px; 
+  font-family: 'Chakra Petch';
+  border: 0px solid #000;
+  width: 100px;
+  margin-left: 0.5%;
+}
+button[name = 'ApplayFilter']:hover{
+  background-color: #5e5e5e;
+}
+.AddButtonDivInPage{
+  position:relative;
+  margin-left: 20px;
+  justify-content: left;
+}
+.UpFieldDetail{
+  margin-top: 1%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.BackArrow{
+  display: flex;
+  align-items: center;
+  font-size: 50px;
+  font-family: 'Chakra Petch';
+  -webkit-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none;
+}
+.Loading{
+  font-size: 30px;
+  font-family: 'Chakra Petch';
+}
+.BackArrow:hover{
+  color:rgb(77, 77, 77);
+}
+.BackArrow:hover #Dribbble-Light-Preview{
+  fill:rgb(77, 77, 77);
+}
+button[class = "ButtonsInDetail"]{
+  margin-right: 10px;
+  background-color: #000000;
+  font-size: 20px;
+  color: white;
+  border-radius: 20px; 
+  font-family: 'Chakra Petch';
+  border: 0px solid #000;
+  width: 100px;
+  margin-left: 0.5%;
+}
+button[class = 'ButtonsInDetail']:hover{
+  background-color: #5e5e5e;
+}
+.buttonsInDetail{
+  display: flex;
+  justify-content: space-between;
+}
+
+.InputDivInDetail{
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.UpFiledInDetail{
+  margin-left: 10px;
+  font-family: 'Chakra Petch';
+  font-size: 25px; 
+}
+input[class = "InputInDeatil"]{
+  box-sizing: border-box;
+  border: 2px solid #000;
+  border-radius: 10px; 
+  background: #EEEEEE !important; 
+  outline: none;
+  height: 30px;
+  width: 30%; 
+  color: #000; 
+  font-size: 20px;  
+  padding-left: 20px;
+  
+  min-width: 300px;
+}
+
+.UpAddMenu{  
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  align-items: flex-end;
+}
+
+.AddText{
+  margin-top: 1%;
+  margin-bottom: 1%;
+  text-align: center;
+  font-size: 25px;
+  font-family: 'Chakra Petch';
+}
+input[name = "AddInput"]{
+  box-sizing: border-box;
+  border: 2px solid #000;
+  border-radius: 10px; 
+  background: #EEEEEE !important; 
+  outline: none;
+  height: 30px;
+  width: 100%; 
+  color: #000; 
+  font-size: 20px;  
+  padding-left: 20px;
+}
+button[name = "ApplayAdd"]{
+  background-color: #000000;
+  font-size: 20px;
+  color: white;
+  border-radius: 20px; 
+  font-family: 'Chakra Petch';
+  border: 0px solid #000;
+  width: 100px;
+  margin-left: 0.5%;
+  height: 30px;
+  margin-right: 20px;
+}
+.button_in_modal{
+  margin-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.ModalUpText{
+  font-size: 30px;
+  font-family: 'Chakra Petch';
+  text-align: center;
+}
+.Selector{
+  box-sizing: border-box;
+  border: 2px solid #000;
+  border-radius: 10px; 
+  background: #EEEEEE !important; 
+  outline: none;
+  height: 30px;
+  width: 100%; 
+  color: #000; 
+  font-size: 20px;  
+  padding-left: 20px;
+}
