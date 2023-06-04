@@ -49,34 +49,53 @@ const UserTable = ({language, filter}) => {
     },[filter])
 
   return (
-    <div >
-       
-        <table>
+    <div style={{overflowX: "auto"}}>
+    <table style={{margin: "10px"}}>
+      <thead>
+        <tr>
+          <th  style={{width: "14%"}}>{stringsText.Id}</th>
+          <th  style={{width: "14%"}}>{stringsText.Login}</th>
+          <th  style={{width: "14%"}}>{stringsText.Name}</th>
+          <th  style={{width: "14%"}}>{stringsText.Email}</th>
+          <th  style={{width: "14%"}}>{stringsText.Phone}</th>
+          <th  style={{width: "14%"}}>{stringsText.Role}</th>
+          <th  style={{width: "5%"}}></th>
+        </tr>
+      </thead>
+      <tbody>
+        {users === null ? (
           <tr>
-            <th style={{width: "14%"}}>{stringsText.Id}</th>
-            <th style={{width: "14%"}}>{stringsText.Login}</th>
-            <th style={{width: "14%"}}>{stringsText.Name}</th>
-            <th style={{width: "14%"}}>{stringsText.Email}</th>
-            <th style={{width: "14%"}}>{stringsText.Phone}</th>
-            <th style={{width: "14%"}}>{stringsText.Role}</th>
-            <th style={{width: "5%"}}></th>
+            <td style={{textAlign: "center"}} colspan="6">{stringsText.Loading}</td>
           </tr>
-
-            {users === null ? <td style={{textAlign: "center"}} colSpan="6" >{stringsText.Loading}</td> : 
-            users.length !== 0 && users[0].user === 0? <td style={{textAlign: "center"}}  colSpan="6">{stringsText.error}</td> :
-            users.map((item,index) => 
-                <tr>
-                <td style={{textAlign: "center"}}>{item.profileId}</td>
-                <td>{item.login}</td>
-                <td>{item.name}</td>
-                <td>{item.email}</td>
-                <td>{item.phoneNumber}</td>
-                <td style={{textAlign: "center"}}>{item.role}</td>
-                <td> <button className="detail" onClick={()=>{ navigate("/users/detail", { state: { id: item.profileId}})}}>{stringsText.Detail}</button> </td>
-              </tr> 
-            )} 
-        </table>
-    </div>
+        ) : users.length !== 0 && users[0].user === 0 ? (
+          <tr>
+            <td style={{textAlign: "center"}} colspan="6">{stringsText.error}</td>
+          </tr>
+        ) : (
+          users.map((item, index) => (
+            <tr>
+              <td style={{textAlign: "center"}}>{item.profileId}</td>
+              <td>{item.login}</td>
+              <td>{item.name}</td>
+              <td>{item.email}</td>
+              <td>{item.phoneNumber}</td>
+              <td style={{textAlign: "center"}}>{item.role}</td>
+              <td>
+                <button
+                  className="detail"
+                  onClick={() => {
+                    navigate("/users/detail", { state: { id: item.profileId } });
+                  }}
+                >
+                  {stringsText.Detail}
+                </button>
+              </td>
+            </tr>
+          ))
+        )}
+      </tbody>
+    </table>
+  </div>
   )
 }
  

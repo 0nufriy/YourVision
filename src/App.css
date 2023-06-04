@@ -2,6 +2,7 @@ table{
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 20px;
     width: 98%;
     font-size: 20px;
     border-collapse: collapse;
@@ -26,19 +27,20 @@ tr :last-child{
 table tr :last-child{
     border: none;
 }
-button[class = "detail"]{
-    font-size: 20px;
-    color: white;
-    border-radius: 20px; 
-    width: 100%;
-    height: auto;
-    margin-left: 0.5%;
-    font-family: 'Chakra Petch';
-    background-color: #000000;
+button[class="detail"] {
+  font-size: 20px;
+  color: white;
+  border-radius: 20px;
+  width: 100%;
+  height: auto;
+  margin-left: 0.5%;
+  font-family: 'Chakra Petch';
+  background-color: #000000;
 }
-button[class = 'detail']:hover{
-    background-color: #5e5e5e;
-  }
+
+button[class='detail']:hover {
+  background-color: #5e5e5e;
+}
   button[class = "delete"]{
     font-size: 20px;
     color: white;
@@ -54,6 +56,42 @@ button[class = 'detail']:hover{
 button[class = 'delete']:hover{
     background-color: #6e0000;
   }
+@media (max-width: 768px) {
+  table {
+    font-size: 16px;
+  }
+
+  th,
+  td {
+    padding-left: 1px;
+  }
+
+  button[class='detail'] {
+    font-size: 16px;
+  }
+  button[class = "delete"]{
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  table {
+    font-size: 14px;
+  }
+
+  th,
+  td {
+    padding-left: 0.5px;
+  }
+
+  button[class='detail'] {
+    font-size: 14px;
+  }
+  button[class = "delete"]{
+    font-size: 14px;
+  }
+}
+
 
   button[class = "Applay"]{
     background-color: #000000;
@@ -111,67 +149,92 @@ button[class = 'Cancel']:hover{
     padding: 20px;
     z-index: "1000";
 }
-.UpFilterMenu{  
+.UpFilterMenu {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: flex-end;
 }
-.Fileter{
-  margin-left: 20px;
-  margin-right: 20px;
+
+.Fileter {
+  margin: 10px;
 }
-.FilterText{
+
+.FilterText {
   margin-top: 1%;
   margin-bottom: 1%;
   text-align: center;
   font-size: 25px;
   font-family: 'Chakra Petch';
 }
-input[name = "FilterInput"]{
+
+input[name="FilterInput"] {
   box-sizing: border-box;
   border: 2px solid #000;
-  border-radius: 10px; 
-  background: #EEEEEE !important; 
+  border-radius: 10px;
+  background: #EEEEEE !important;
   outline: none;
   height: 30px;
-  width: 100%; 
-  color: #000; 
-  font-size: 20px;  
+  width: 100%;
+  color: #000;
+  font-size: 20px;
   padding-left: 20px;
 }
-button[name = "ApplayFilter"]{
+
+button[name="ApplayFilter"] {
   background-color: #000000;
   font-size: 20px;
   color: white;
-  border-radius: 20px; 
+  border-radius: 20px;
   font-family: 'Chakra Petch';
   border: 0px solid #000;
   width: 100px;
-  margin-left: 0.5%;
+  margin: 10px; /* Змінюємо відступи */
 }
-button[name = 'ApplayFilter']:hover{
+
+button[name='ApplayFilter']:hover {
   background-color: #5e5e5e;
 }
 .AddButtonDivInPage{
-  position:relative;
   margin-left: 20px;
   justify-content: left;
 }
-.UpFieldDetail{
+.UpFieldDetail {
   margin-top: 1%;
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
-.BackArrow{
+
+.BackArrow {
   display: flex;
   align-items: center;
   font-size: 50px;
   font-family: 'Chakra Petch';
-  -webkit-user-select: none; 
-  -ms-user-select: none; 
+  -webkit-user-select: none;
+  -ms-user-select: none;
   user-select: none;
+  margin-bottom: 10px;
+}
+
+.buttonsInDetail {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+button.ButtonsInDetail {
+  margin-right: 10px;
+  background-color: #000000;
+  font-size: 20px;
+  color: white;
+  border-radius: 20px;
+  font-family: 'Chakra Petch';
+  border: 0px solid #000;
+  width: 100px;
+  margin-bottom: 10px;
 }
 .Loading{
   font-size: 30px;
@@ -183,25 +246,31 @@ button[name = 'ApplayFilter']:hover{
 .BackArrow:hover #Dribbble-Light-Preview{
   fill:rgb(77, 77, 77);
 }
-button[class = "ButtonsInDetail"]{
-  margin-right: 10px;
-  background-color: #000000;
-  font-size: 20px;
-  color: white;
-  border-radius: 20px; 
-  font-family: 'Chakra Petch';
-  border: 0px solid #000;
-  width: 100px;
-  margin-left: 0.5%;
-}
 button[class = 'ButtonsInDetail']:hover{
   background-color: #5e5e5e;
 }
-.buttonsInDetail{
-  display: flex;
-  justify-content: space-between;
-}
+@media only screen and (max-width: 600px) {
+  .UpFieldDetail {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
+  .BackArrow {
+    font-size: 30px;
+    margin-bottom: 5px;
+  }
+
+  .buttonsInDetail {
+    margin-left: 10px;
+    justify-content: flex-start;
+  }
+
+  button.ButtonsInDetail {
+    width: auto;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+}
 .InputDivInDetail{
   margin-top: 10px;
   margin-left: 10px;

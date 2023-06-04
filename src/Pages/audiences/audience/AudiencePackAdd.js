@@ -200,7 +200,7 @@ const AudiencePackAdd = ({language}) => {
                 <button name="ApplayAdd" onClick={()=>{doAdd()}}>{stringsText.ApplayAdd}</button>
             </div>
            <AudiencePackAddTable language={language} audiences={audiencesToAdd} setAudiences={setAudiencesToAdd} ></AudiencePackAddTable>
-            <div style={{marginTop: "10px", marginLeft: "1%"}}>
+            <div style={{marginTop: "10px", marginLeft: "1%",marginBottom: "20px"}}>
                 <button className='Applay' onClick={addPack}>{stringsText.Add}</button>
                 <button className='Cancel' onClick={()=>{navigate('/audiences')}}>{stringsText.Cancel}</button>
             </div>

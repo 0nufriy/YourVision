@@ -48,6 +48,18 @@ const SessionsTable = ({language, filter,filterDate}) => {
     },[filter, filterDate])
 
 
+    function dateToLocal(date){    
+        var newDate = new Date(date);
+        var timeZoneOffset = new Date().getTimezoneOffset();
+        newDate.setMinutes(newDate.getMinutes() - timeZoneOffset);
+        var year = newDate.getFullYear();
+        var month = (newDate.getMonth() + 1).toString().padStart(2, "0"); 
+        var day = newDate.getDate().toString().padStart(2, "0");
+        var hours = newDate.getHours().toString().padStart(2, "0");
+        var minutes = newDate.getMinutes().toString().padStart(2, "0");
+        var formattedDate = year + "-" + month + "-" + day + "T" + hours + ":" + minutes;
+        return formattedDate
+    }
 
     function detail(id){
         navigate('/sessions/detail', { state: { id: id}});
@@ -74,7 +86,7 @@ const SessionsTable = ({language, filter,filterDate}) => {
                 <td style={{textAlign: "center"}}>{item.durationMinute.toString() + " " + stringsText.minuten}</td>
                 <td>{item.location}</td>
                 <td style={{textAlign: "center"}}>{item.status}</td>
-                <td style={{textAlign: "center"}}>{item.datetime.replace("T"," ")}</td>
+                <td style={{textAlign: "center"}}>{dateToLocal(item.datetime).replace("T"," ")}</td>
                 <td> <button className="detail" name = {item.sessionId} onClick={() => {detail(item.sessionId)}}>{stringsText.Detail}</button> </td>
               </tr> 
             )

@@ -1,18 +1,17 @@
-.loginoverlay{
-  
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    width: 30%;
-    height: 50%;
-    min-width: 600px;
-    min-height: 470px;
-    background-color: #3A3A3A;
-    border-radius: 80px;
-  }
+
+
+.loginoverlay {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: auto;
+  max-width: 600px;
+  background-color: #3A3A3A;
+  border-radius: 80px;
+}
 .logo{
     text-align: center;
     margin-top: 20px;
@@ -65,6 +64,7 @@
   }
   button[name = "ApllayLogin1"]{
     margin-top: 10px;
+    margin-bottom: 20px;
     background-color: #7B7B7B;
     font-size: 40px;
     color: #FFF;

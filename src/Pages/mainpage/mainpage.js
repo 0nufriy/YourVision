@@ -52,23 +52,46 @@ const MainPage = ({language}) => {
         <Navigate to = "/login"></Navigate>
     )
   }
+  function toggleMenu() {
+  var menuItems = document.querySelector('.menu-items');
+  menuItems.classList.toggle('open');
+}
   return (
     <div>
-    <div className='UpMenu'>
-      <div className='Logo'>
-        YourVision
-      </div>
-      <div className='buttons'>
-        <Link to={'/sessions'}><button onClick={() => setIndex(1)} name = {indexActive === 1 ? 'Selected' :'Unselected'}>{stringsText.Sessions} </button></Link>
-        <Link to={'/audiences'}><button onClick={() => setIndex(2)}  name = {indexActive === 2 ? 'Selected' :'Unselected'}>{stringsText.Audiences} </button></Link>
-        <Link to= {'/users'}><button onClick={() => setIndex(3)}  name = {indexActive === 3 ? 'Selected' :'Unselected'}>{stringsText.Users}</button></Link>   
-      </div>
-      <div className='exit'>
-        <button name = "exit" onClick={unLogin}>{stringsText.Exit}</button>
-      </div>
+  <div class='UpMenu'>
+    <div class='Logo'>
+      YourVision
     </div>
-    <Outlet></Outlet>
+    <div class='buttons'>
+      <button class='menu-toggle' onClick={toggleMenu}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class='menu-items'>
+    <Link to={'/sessions'}>
+      <button onClick={() => setIndex(1)} name={indexActive === 1 ? 'Selected' : 'Unselected'}>
+        {stringsText.Sessions}
+      </button>
+    </Link>
+    <Link to={'/audiences'}>
+      <button onClick={() => setIndex(2)} name={indexActive === 2 ? 'Selected' : 'Unselected'}>
+        {stringsText.Audiences}
+      </button>
+    </Link>
+    <Link to={'/users'}>
+      <button onClick={() => setIndex(3)} name={indexActive === 3 ? 'Selected' : 'Unselected'}>
+        {stringsText.Users}
+      </button>
+    </Link>
   </div>
+    </div>
+    <div class='exit'>
+      <button name='exit' onClick={unLogin}>{stringsText.Exit}</button>
+    </div>
+  </div>
+  <Outlet></Outlet>
+</div>
   )
 }
 

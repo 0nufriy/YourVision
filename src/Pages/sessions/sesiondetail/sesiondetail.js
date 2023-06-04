@@ -132,7 +132,7 @@ const SessionDetail = ({language}) => {
         }
         async function Users(){
             getAllUsers().then(response =>{
-                setUsers(response)
+                setUsers(response.filter(val => val.role === "user"));
             }).catch(()=>{
 
             })
@@ -183,12 +183,25 @@ const SessionDetail = ({language}) => {
                     endTime.setMinutes(endTime.getMinutes + session.durationMinute + 60)
                     if(selectedTime >= startTime && selectedTime< endTime){
                         inputElement.value = endTime.toISOString().slice(0, 16);
+                        return;
                     }
                 })
                 inputElement.value = result
             }
     }
-
+    function dateToLocal(date){    
+        var newDate = new Date(date);
+        var localTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        var timeZoneOffset = new Date().getTimezoneOffset();
+        newDate.setMinutes(newDate.getMinutes() - timeZoneOffset);
+        var year = newDate.getFullYear();
+        var month = (newDate.getMonth() + 1).toString().padStart(2, "0"); 
+        var day = newDate.getDate().toString().padStart(2, "0");
+        var hours = newDate.getHours().toString().padStart(2, "0");
+        var minutes = newDate.getMinutes().toString().padStart(2, "0");
+        var formattedDate = year + "-" + month + "-" + day + "T" + hours + ":" + minutes;
+        return formattedDate
+    }
     function GenerateReport(){
         setGenerateLoading(true)
         setGenerateMessage(true)
@@ -278,12 +291,16 @@ const SessionDetail = ({language}) => {
             return val.audiencePackId == audiencePackAdd
         })
         var add = true;
+        
+        var newPrice = 0;
         session.audiencePacks.forEach((element,index) => {
             if(element.audiencePackId == audiencePackAdd){
                 newAP[index].audiencePackCount +=count
                 add = false;
                 newAP.forEach(element => {
                     newPrice += element.price * element.audiencePackCount 
+                    
+                    console.log(element.price * element.audiencePackCount)
                 });
                 setSession({
                     datetime: session.datetime,
@@ -305,7 +322,6 @@ const SessionDetail = ({language}) => {
                 name: pack[0].audiencePackName,
                 price: pack[0].price,
             })
-            var newPrice = 0;
             newAP.forEach(element => {
                 newPrice += element.price * element.audiencePackCount 
             });
@@ -325,9 +341,11 @@ const SessionDetail = ({language}) => {
       }
 
       function applayChange(){
+        var date = new Date(DateTime.current.value);
+        var formattedDate = date.toISOString();
             var request = {
                 sessionId: session.sessionId,
-                datetime: DateTime.current.value,
+                datetime: formattedDate.slice(0,16),
                 profileId: parseInt(login.current.value),
                 status: Status.current.value,
                 durationMinute: Duration.current.value,
@@ -513,7 +531,7 @@ const SessionDetail = ({language}) => {
                 <div className='UpFiledInDetail'>
                     {stringsText.Date}
                 </div>
-                <input id='dateInput' type="datetime-local" step="900" className='InputInDeatil' ref={DateTime} defaultValue={session.datetime} onChange={dateRound} style={{width:"auto", minWidth:"auto"}}>
+                <input id='dateInput' type="datetime-local" step="900" className='InputInDeatil' ref={DateTime} defaultValue={dateToLocal(session.datetime)} onChange={dateRound} style={{width:"auto", minWidth:"auto"}}>
                 </input>
                 <div className='UpFiledInDetail'>
                     {stringsText.Price}
@@ -536,7 +554,7 @@ const SessionDetail = ({language}) => {
                 <button name="ApplayAdd" onClick={doAdd}>{stringsText.ApplayAdd}</button>
             </div>
             <SessionDeatilTable language ={language} session ={session} setSession={setSession}></SessionDeatilTable> 
-            <div style={{marginTop: "10px", marginLeft: "1%"}}>
+            <div style={{marginTop: "10px", marginLeft: "1%", marginBottom: "20px"}}>
                 <button className='Applay' onClick={applayChange}>{stringsText.Applay}</button>
                 <button className='Cancel' onClick={()=>{navigate('/sessions')}}>{stringsText.Cancel}</button>
             </div>

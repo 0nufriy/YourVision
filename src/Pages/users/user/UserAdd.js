@@ -161,7 +161,7 @@ const UserAdd = ({language}) => {
         </input>
     </div> 
     
-    <div style={{marginTop: "10px", marginLeft: "1%", width: "30%", justifyContent: "center", display: "flex"}}>
+    <div style={{marginTop: "10px", marginLeft: "1%", width: "30%", display: "flex", marginBottom: "20px"}}>
         <button className='Applay' onClick={addNewUser}>{stringsText.Add}</button>
         <button className='Cancel' onClick={()=>{navigate('/users')}}>{stringsText.Cancel}</button>
     </div>

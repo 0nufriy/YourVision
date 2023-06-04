@@ -41,23 +41,23 @@ const SessionsPage = ({language}) => {
   return (
     <div>
       <div className="UpFilterMenu">
-        <div className="Fileter">
-            <div className="FilterText">
-                {stringsText.Search}
-            </div>
-            <input name="FilterInput" ref={filterUser}>
-            </input>
-        </div>
-        <div className="Fileter">
-            <div className="FilterText">
-                {stringsText.SearchDate}
-            </div>
-            <input type="date" name="FilterInput" ref={filterDate}>
-            </input>
-        </div>
-        <button name="ApplayFilter" onClick={doFilter}>{stringsText.Applay}</button>
-        <button name="ApplayFilter" onClick={resetFilter}>{stringsText.Reset}</button>
-      </div>
+  <div className="Fileter">
+    <div className="FilterText">
+      {stringsText.Search}
+    </div>
+    <input name="FilterInput" ref={filterUser} />
+  </div>
+  <div className="Fileter">
+    <div className="FilterText">
+      {stringsText.SearchDate}
+    </div>
+    <input type="date" name="FilterInput" ref={filterDate} />
+  </div>
+  <div style={{ display: "flex", justifyContent: "center" }}>
+    <button name="ApplayFilter" onClick={doFilter}>{stringsText.Applay}</button>
+    <button name="ApplayFilter" onClick={resetFilter}>{stringsText.Reset}</button>
+  </div>
+</div>
     <SessionsTable language={language} filter = {fil} filterDate = {filData}></SessionsTable>
     </div>
   )

@@ -141,6 +141,7 @@ const UserDetail = ({language}) => {
         if(password !== rePassword){
             Password.current.style.border = "4px solid #FF5A5A"
             RePassword.current.style.border = "4px solid #FF5A5A"
+            return;
         }else{
             Password.current.style.border = ""
             RePassword.current.style.border = ""
@@ -252,7 +253,7 @@ const UserDetail = ({language}) => {
     
     
     
-    <div style={{marginTop: "10px", marginLeft: "1%", width: "30%", justifyContent: "center", display: "flex"}}>
+    <div style={{marginTop: "10px", marginLeft: "1%", width: "30%", display: "flex"}}>
         <button className='Applay' onClick={updateThisUser}>{stringsText.Update}</button>
         <button className='Cancel' onClick={()=>{navigate('/users')}}>{stringsText.Cancel}</button>
     </div>
@@ -274,7 +275,7 @@ const UserDetail = ({language}) => {
         <input className='InputInDeatil' ref={RePassword}>
         </input>
     </div> 
-    <div style={{marginTop: "10px", marginLeft: "1%", width: "30%", justifyContent: "center", display: "flex"}}>
+    <div style={{marginTop: "10px", marginLeft: "1%", width: "30%", display: "flex", marginBottom: "20px"}}>
         <button className='Applay' onClick={changePassword}>{stringsText.ChangePassword}</button>
     </div>
     </div>
