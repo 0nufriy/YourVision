@@ -77,8 +77,14 @@ const SessionsTable = ({language, filter,filterDate}) => {
             <th style={{width: "5%"}}></th>
           </tr>
 
-            {sessions === null ? <td style={{textAlign: "center"}} colspan="6" >{stringsText.Loading}</td> : 
-            sessions.length !== 0 && sessions[0].sessionId === 0? <td style={{textAlign: "center"}}  colspan="6">{stringsText.error}</td> :
+            {sessions === null ?  
+            <tr>
+                <td style={{textAlign: "center"}} colspan="6">{stringsText.Loading}</td>
+            </tr> : 
+            sessions.length !== 0 && sessions[0].sessionId === 0? 
+            <tr>
+                <td style={{textAlign: "center"}} colspan="6">{stringsText.error}</td>
+            </tr> :
             sessions.map((item,index) =>
                 <tr>
                 <td style={{textAlign: "center"}}>{item.sessionId}</td>

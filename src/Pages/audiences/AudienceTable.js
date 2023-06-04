@@ -54,8 +54,14 @@ const AudienceTable = ({language,filter}) => {
             <th style={{width: "5%"}}></th>
           </tr>
 
-            {audiencePack === null ? <td style={{textAlign: "center"}} colSpan="3" >{stringsText.Loading}</td> : 
-            audiencePack.length !== 0 && audiencePack[0].audiencePack === 0? <td style={{textAlign: "center"}}  colSpan="3">{stringsText.error}</td> :
+            {audiencePack === null ? 
+            <tr>
+                <td style={{textAlign: "center"}} colspan="6">{stringsText.Loading}</td>
+            </tr> : 
+            audiencePack.length !== 0 && audiencePack[0].audiencePack === 0? 
+            <tr>
+                <td style={{textAlign: "center"}} colspan="6">{stringsText.error}</td>
+            </tr>:
             audiencePack.map((item,index) => 
                 <tr>
                 <td style={{textAlign: "center"}}>{item.audiencePackId}</td>
