@@ -1,6 +1,6 @@
 import { json } from "react-router-dom";
 
-const BASE_URL = "http://192.168.226.94:7178/api";
+const BASE_URL = "https://localhost:7178/api";
 
 
 const requestJSON = (options) => {
