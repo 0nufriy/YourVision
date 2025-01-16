@@ -2,7 +2,6 @@ import React from 'react'
 import LocalizedStrings from 'react-localization'
 import { useNavigate } from 'react-router-dom';
 import { deleteSession } from '../../http';
-import "./sessiondetail.css"
 
 let stringsText = new LocalizedStrings({
     en:{
