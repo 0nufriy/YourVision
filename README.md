@@ -63,6 +63,21 @@ npm run build
 
 The production-ready files will be available in the `build` directory.
 
+## Screenshots
+
+Below is a placeholder for screenshots demonstrating the application's functionality:
+
+1. **Login Screen**
+   ![Home Page](https://github.com/0nufriy/YourVision/raw/image/login.png)
+
+2. **Home page**
+   ![Feature Example](https://github.com/0nufriy/YourVision/raw/image/homeScreen.png)
+
+3. **Edit Data Example**
+   ![Mobile View](https://github.com/0nufriy/YourVision/raw/image/edit.png)
+
+
+
 ## Contributing
 
 We welcome contributions! If you have suggestions, bug fixes, or feature requests, feel free to open an issue or submit a pull request.
