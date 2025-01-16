@@ -68,15 +68,22 @@ The production-ready files will be available in the `build` directory.
 Below is a placeholder for screenshots demonstrating the application's functionality:
 
 1. **Login Screen**
-   ![Home Page](https://github.com/0nufriy/YourVision/raw/image/login.png)
 
-2. **Home page**
-   ![Feature Example](https://github.com/0nufriy/YourVision/raw/image/homeScreen.png)
+    ![Login Scree](https://github.com/0nufriy/YourVision/raw/image/login.png)
 
-3. **Edit Data Example**
-   ![Mobile View](https://github.com/0nufriy/YourVision/raw/image/edit.png)
+   This image displays the login page of the YourVision application. The user enters their login and password to access the system's functionality. The interface is minimalist and user-friendly.
+   
+3. **Home page**
 
+    ![Home page](https://github.com/0nufriy/YourVision/raw/image/homeScreen.png)
 
+   This image shows the home page with a list of sessions. The user can search by username or date and view session details. The intuitive design ensures easy access to necessary information.
+   
+5. **Edit Data Example**
+
+    ![Edit Data Exampl](https://github.com/0nufriy/YourVision/raw/image/edit.png)
+
+   This screenshot demonstrates the session editing form. Fields include duration, location, status, date and time, and price. At the bottom, there's a table with packages that can be added or modified for a specific session. There are buttons for applying or canceling changes, as well as options to delete or start a session.
 
 ## Contributing
 
